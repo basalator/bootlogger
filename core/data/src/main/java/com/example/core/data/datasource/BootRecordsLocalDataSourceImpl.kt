@@ -14,13 +14,13 @@ internal class BootRecordsLocalDataSourceImpl(private val dao: BootRecordsDao): 
     override fun getBootRecordById(id: String): Flow<BootRecord> = dao.get(id).map { it?.toModel()!! }
 
     override fun getBootRecords(
-        dateStart: LocalDateTime,
-        dateEnd: LocalDateTime
+        dateStart: LocalDateTime?,
+        dateEnd: LocalDateTime?
     ): Flow<List<BootRecord>> = dao.get(dateStart, dateEnd).map { list -> list.mapNotNull { it?.toModel() } }
 
     override fun getBootRecordsCount(
-        dateStart: LocalDateTime,
-        dateEnd: LocalDateTime
+        dateStart: LocalDateTime?,
+        dateEnd: LocalDateTime?
     ): Flow<Long> = dao.getCount(dateStart, dateEnd)
 
     override suspend fun putRecord(record: BootRecord) {

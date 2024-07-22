@@ -16,7 +16,10 @@ class GetBootRecordsUseCase @Inject constructor(
     private val bootRecordsRepository: BootRecordsRepository,
 ) {
 
-    operator fun invoke(dateStart: LocalDateTime, dateEnd: LocalDateTime): Flow<List<BootRecord>> =
+    operator fun invoke(
+        dateStart: LocalDateTime? = null,
+        dateEnd: LocalDateTime? = null
+    ): Flow<List<BootRecord>> =
         bootRecordsRepository.getBootRecords(dateStart, dateEnd)
             .flowOn(dispatcher)
             .catch { emit(emptyList()) }

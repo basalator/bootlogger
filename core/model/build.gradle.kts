@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.bootlogger.android.library.data)
+    alias(libs.plugins.bootlogger.android.library)
 }
 
 android {
