@@ -12,6 +12,7 @@ class AndroidLibraryDataConventionPlugin : Plugin<Project> {
 
             dependencies {
                 add("implementation", project(":core:model"))
+                add("implementation", project(":core:common"))
                 add("implementation", project(":core:database"))
             }
         }

@@ -22,10 +22,12 @@ dependencyResolutionManagement {
     }
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "My Application"
+rootProject.name = "BootLogger"
 include(":app")
 include(":core:database")
 include(":core:data")
 include(":core:domain")
 include(":core:model")
+include(":core:common")

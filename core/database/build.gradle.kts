@@ -8,6 +8,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.model)
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
     kapt(libs.room.compiler)
